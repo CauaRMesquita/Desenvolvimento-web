@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contador até cem</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            padding: 20px;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+        <h1>Contador até cem</h1>
+        <input type="number" id="numero1" placeholder="Digite a nota 1" />
+        <button onclick="verificar()">Verificar</button>
+
+        <div id="resultado"></div>
+
+        <script>
+            function verificar() {
+                const num1 = parseFloat(document.getElementById("numero1").value);
+                const resultado = document.getElementById("resultado");
+
+                if (isNaN(num1)) {
+                    resultado.textContent = "Por favor, digite um número válido.";
+                    return;
+                }
+
+                for (let i = 0; i < num1 i += 1) {
+                    resultado.textContent += `${i} `;
+                }
+
+
+            }
+        </script>
+</body>
+
+</html>

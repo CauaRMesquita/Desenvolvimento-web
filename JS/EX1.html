@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Media</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;    
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<button>oi</button>
+<input>
+  <h1>Calculadora de media</h1>
+  <input type="number" id="numero1" placeholder="Digite a nota 1" />
+  <input type="number" id="numero2" placeholder="Digite a nota 2" />
+  <input type="number" id="numero3" placeholder="Digite a nota 3" />
+  <button onclick="verificar()">Verificar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function verificar() {
+      const num1 = parseFloat(document.getElementById("numero1").value);
+      const num2 = parseFloat(document.getElementById("numero2").value);
+      const num3 = parseFloat(document.getElementById("numero3").value);
+      const resultado = document.getElementById("resultado");
+
+      if (isNaN(num1)) {
+        resultado.textContent = "Por favor, digite um número válido.";
+        return;
+      }
+      if (isNaN(num2)) {
+        resultado.textContent = "Por favor, digite um número válido.";
+        return;
+      }
+      if (isNaN(num3)) {
+        resultado.textContent = "Por favor, digite um número válido.";
+        return;
+      }
+
+      conta = (num1 + num2 + num3) / 3
+      
+        resultado.textContent = `A media é ${conta}`;
+    
+    }
+  </script>
+
+</body>
+</html>
+
