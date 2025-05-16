@@ -13,6 +13,7 @@
             text-align: center;
             margin-top: 50px;
         }
+
         h1 {
             padding: 20px;
         }
@@ -32,29 +33,36 @@
 </head>
 
 <body>
+    <div>
         <h1>Contador até cem</h1>
-        <input type="number" id="numero1" placeholder="Digite a nota 1" />
+        <input type="number" id="numero1" placeholder="Digite um número" />
         <button onclick="verificar()">Verificar</button>
 
         <div id="resultado"></div>
+    </div>
 
-        <script>
-            function verificar() {
-                const num1 = parseFloat(document.getElementById("numero1").value);
-                const resultado = document.getElementById("resultado");
+    <script>
+        function verificar() {
+            const num1 = parseInt(document.getElementById("numero1").value);
+            const resultado = document.getElementById("resultado");
 
-                if (isNaN(num1)) {
-                    resultado.textContent = "Por favor, digite um número válido.";
-                    return;
-                }
+            resultado.textContent = ""; // Limpa resultado anterior
 
-                for (let i = 0; i < num1 i += 1) {
-                    resultado.textContent += `${i} `;
-                }
-
-
+            if (isNaN(num1)) {
+                resultado.textContent = "Por favor, digite um número válido.";
+                return;
             }
-        </script>
+
+            if (num1 > 100) {
+                resultado.textContent = "O número deve ser menor ou igual a 100.";
+                return;
+            }
+
+            for (let i = num1; i <= 100; i++) {
+                resultado.textContent += `${i} `;
+            }
+        }
+    </script>
 </body>
 
 </html>

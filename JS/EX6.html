@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inverter String</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+
+        h1 {
+            padding: 20px;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Inverter String</h1>
+    <input type="text" id="stg1" placeholder="Digite uma palavra" />
+    <button onclick="inverter()">Inverter</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function MaiorNum(string) {
+            const texto = document.getElementById("stg1").value;
+            const invertido = texto.split("").reverse().join("");
+            document.getElementById("resultado").textContent = `Resultado: ${invertido}`;
+        }
+    </script>
+</body>
+
+</html>
+
+function encontrarMaiorNumero(string) {
+  const numeros = string.match(/\d+/g);
+
+  if (!numeros || numeros.length === 0) {
+    return NaN;
+  }
+
+  return Math.max(...numeros.map(Number));
+}
+
+const string = "Este é um exemplo 123 com o número 987";
+const maior = encontrarMaiorNumero(string);
+
+console.log(`O maior número na string é: ${maior}`);
